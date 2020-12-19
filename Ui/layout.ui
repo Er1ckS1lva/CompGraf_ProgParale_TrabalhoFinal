@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1138</width>
+    <height>520</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Elojob Editor</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="img1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>941</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="info">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>90</y>
+      <width>471</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>0</y>
+      <width>160</width>
+      <height>287</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="menu_vertical">
+     <item>
+      <widget class="QLabel" name="label_titulo">
+       <property name="text">
+        <string>           MENU OPÇÕES</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="esquerda">
+         <property name="text">
+          <string>Girar Esq</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="direita">
+         <property name="text">
+          <string>Girar Dir</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="espelharver">
+       <property name="text">
+        <string>Espelhar Verticalmente</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="espelharh">
+       <property name="text">
+        <string>Espelhar Horizontalmente</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="resetar">
+       <property name="text">
+        <string>Resetar</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_transparencia">
+       <property name="text">
+        <string>Transparência</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="transparencia">
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="value">
+        <number>255</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_Gamma">
+       <property name="text">
+        <string>Gamma</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="gamma">
+       <property name="maximum">
+        <number>25</number>
+       </property>
+       <property name="value">
+        <number>10</number>
+       </property>
+       <property name="sliderPosition">
+        <number>10</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="msg_oculta">
+       <property name="text">
+        <string>Mensagens Ocultas</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1138</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArquivos">
+    <property name="title">
+     <string>Arquivos</string>
+    </property>
+    <addaction name="abrir_imagem"/>
+    <addaction name="actionSalvar_Imagem"/>
+    <addaction name="fechar_app"/>
+   </widget>
+   <widget class="QMenu" name="menuTransformacoes">
+    <property name="title">
+     <string>Transformações</string>
+    </property>
+    <widget class="QMenu" name="deteccao">
+     <property name="title">
+      <string>Detecção de Bordas</string>
+     </property>
+     <addaction name="godeteccao"/>
+     <addaction name="actionDetec_o_Padr_o"/>
+     <addaction name="actionDetec_o_Avan_ada"/>
+     <addaction name="actionFind_Edges"/>
+    </widget>
+    <widget class="QMenu" name="menuSeparar_Camadas_RGB">
+     <property name="title">
+      <string>Separar Camadas RGB</string>
+     </property>
+     <addaction name="actionCamada_Vermelha"/>
+     <addaction name="actionCamada_Azul"/>
+     <addaction name="actionCamada_Verde"/>
+    </widget>
+    <widget class="QMenu" name="menuEdge">
+     <property name="title">
+      <string>Edge</string>
+     </property>
+     <addaction name="actionEnhance"/>
+     <addaction name="actionEnhance_More"/>
+    </widget>
+    <widget class="QMenu" name="menuSmooth">
+     <property name="title">
+      <string>Smooth</string>
+     </property>
+     <addaction name="actionBasic"/>
+     <addaction name="actionSmooth_More"/>
+    </widget>
+    <addaction name="actionBlour"/>
+    <addaction name="actionContour"/>
+    <addaction name="actionCor_Ngeativa"/>
+    <addaction name="actionDetail"/>
+    <addaction name="deteccao"/>
+    <addaction name="menuEdge"/>
+    <addaction name="actionEmboss"/>
+    <addaction name="actionEscala_de_Cinza"/>
+    <addaction name="actionLogar_tmica"/>
+    <addaction name="actionPreto_e_Branco"/>
+    <addaction name="menuSeparar_Camadas_RGB"/>
+    <addaction name="actionSharpen"/>
+    <addaction name="menuSmooth"/>
+   </widget>
+   <widget class="QMenu" name="menuSobre">
+    <property name="title">
+     <string>Sobre</string>
+    </property>
+    <addaction name="actionInforma_es_da_Imagem"/>
+    <addaction name="actionInforma_es_do_App"/>
+   </widget>
+   <addaction name="menuArquivos"/>
+   <addaction name="menuTransformacoes"/>
+   <addaction name="menuSobre"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="abrir_imagem">
+   <property name="text">
+    <string>Abrir Imagem</string>
+   </property>
+  </action>
+  <action name="fechar_app">
+   <property name="text">
+    <string>Fechar App</string>
+   </property>
+  </action>
+  <action name="godeteccao">
+   <property name="text">
+    <string>Detecção Simples</string>
+   </property>
+  </action>
+  <action name="gonegativo">
+   <property name="text">
+    <string>Transformar</string>
+   </property>
+  </action>
+  <action name="gocinza">
+   <property name="text">
+    <string>Transformar</string>
+   </property>
+  </action>
+  <action name="ver">
+   <property name="text">
+    <string>Mostrar</string>
+   </property>
+  </action>
+  <action name="esconder">
+   <property name="text">
+    <string>Ocultar</string>
+   </property>
+  </action>
+  <action name="actionRodar_90">
+   <property name="text">
+    <string>Rodar 90º</string>
+   </property>
+  </action>
+  <action name="actionEspelhar_Horizontalmente">
+   <property name="text">
+    <string>Espelhar Horizontalmente</string>
+   </property>
+  </action>
+  <action name="actionEspelhar_Verticalmente">
+   <property name="text">
+    <string>Espelhar Verticalmente</string>
+   </property>
+  </action>
+  <action name="goborrar">
+   <property name="text">
+    <string>Tranasformar</string>
+   </property>
+  </action>
+  <action name="gopreto">
+   <property name="text">
+    <string>Transformar</string>
+   </property>
+  </action>
+  <action name="actionCamada_Vermelha">
+   <property name="text">
+    <string>Camada Vermelha</string>
+   </property>
+  </action>
+  <action name="actionCamada_Azul">
+   <property name="text">
+    <string>Camada Azul</string>
+   </property>
+  </action>
+  <action name="actionCamada_Verde">
+   <property name="text">
+    <string>Camada Verde</string>
+   </property>
+  </action>
+  <action name="actionSalvar_Imagem">
+   <property name="text">
+    <string>Salvar Imagem</string>
+   </property>
+  </action>
+  <action name="actionResetar">
+   <property name="text">
+    <string>Resetar</string>
+   </property>
+  </action>
+  <action name="actionTranspar_ncia">
+   <property name="text">
+    <string>Transparência</string>
+   </property>
+  </action>
+  <action name="actionBlour">
+   <property name="text">
+    <string>Blur</string>
+   </property>
+  </action>
+  <action name="actionContour">
+   <property name="text">
+    <string>Contour</string>
+   </property>
+  </action>
+  <action name="actionDetail">
+   <property name="text">
+    <string>Detail</string>
+   </property>
+  </action>
+  <action name="actionEnhance">
+   <property name="text">
+    <string>Enhance</string>
+   </property>
+  </action>
+  <action name="actionEnhance_More">
+   <property name="text">
+    <string>Enhance More</string>
+   </property>
+  </action>
+  <action name="actionEmboss">
+   <property name="text">
+    <string>Emboss</string>
+   </property>
+  </action>
+  <action name="actionFind_Edges">
+   <property name="text">
+    <string>Find Edges</string>
+   </property>
+  </action>
+  <action name="actionSharpen">
+   <property name="text">
+    <string>Sharpen</string>
+   </property>
+  </action>
+  <action name="actionBasic">
+   <property name="text">
+    <string>Basic</string>
+   </property>
+  </action>
+  <action name="actionSmooth_More">
+   <property name="text">
+    <string>Smooth More</string>
+   </property>
+  </action>
+  <action name="actionInforma_es_da_Imagem">
+   <property name="text">
+    <string>Informações da Imagem</string>
+   </property>
+  </action>
+  <action name="actionDetec_o_Padr_o">
+   <property name="text">
+    <string>Detecção Padrão</string>
+   </property>
+  </action>
+  <action name="actionDetec_o_Avan_ada">
+   <property name="text">
+    <string>Detecção Avançada</string>
+   </property>
+  </action>
+  <action name="actionLogar_tmica">
+   <property name="text">
+    <string>Logarítmica</string>
+   </property>
+  </action>
+  <action name="actionTransformar">
+   <property name="text">
+    <string>Transformar</string>
+   </property>
+  </action>
+  <action name="actionCor_Ngeativa">
+   <property name="text">
+    <string>Cor Negativa</string>
+   </property>
+  </action>
+  <action name="actionPreto_e_Branco">
+   <property name="text">
+    <string>Preto e Branco</string>
+   </property>
+  </action>
+  <action name="actionCorre_o_gamma">
+   <property name="text">
+    <string>Correção gamma</string>
+   </property>
+  </action>
+  <action name="actionEscala_de_Cinza">
+   <property name="text">
+    <string>Escala de Cinza</string>
+   </property>
+  </action>
+  <action name="actionInforma_es_do_App">
+   <property name="text">
+    <string>Informações do App</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
